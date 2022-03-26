@@ -1,20 +1,21 @@
-import React ,{useState,useEffect} from 'react';
+import React ,{useState,useEffect,useRef} from 'react';
 import { ChatContainer } from './HomeStyle';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { allUsersRoute } from '../utility/APIRoutes';
+import { allUsersRoute ,host } from '../utility/APIRoutes';
 import Contacts from '../components/Contacts';
 import Dashboard from '../components/Dashboard';
 import Chatbox from '../components/Chatbox';
+import {io} from "socket.io-client";
 
 
 export default function Home() {
   const navigate=useNavigate();
-
+  const socket=useRef();
   const [contacts,setContacts]=useState([]);
+  const [currentChat, setCurrentChat] = useState(undefined);
   const [currentUser, setCurrentUser] = useState(undefined);
   
-  const [currentChat, setCurrentChat] = useState(undefined);
 
   useEffect(async () => {
     if (!localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
@@ -28,6 +29,15 @@ export default function Home() {
     }
   }, []);
 
+  
+  useEffect(() => {
+    if (currentUser) {
+      socket.current = io(host);
+      socket.current.emit("add-user", currentUser._id);
+    }
+  }, [currentUser]);
+
+  
   useEffect(async () => {
     if (currentUser) {
       if (currentUser.isAvatarImageSet) {
@@ -48,10 +58,10 @@ export default function Home() {
       <ChatContainer>
         <div className='container'>
         <Contacts contacts={contacts} currentUser={currentUser} changeChat={handleChatChange}/>
-        {currentUser===undefined? (
+        {currentChat===undefined? (
           <Dashboard currentUser={currentUser}/>
         ):(
-          <Chatbox />
+          <Chatbox currentChat={currentChat} currentUser={currentUser}  socket={socket} />
         )}
         
         </div>
