@@ -1,10 +1,14 @@
 import styled from "styled-components";
+import { ROOTS } from "../utility/globalstyle";
 
 export const Container = styled.div`
   display: grid;
   grid-template-rows: 10% 75% 15%;
   overflow: hidden;
-  background-color: #080420;
+  border-radius:1rem;
+  border-top-right-radius:0;
+  border-bottom-right-radius:0;
+  background-color: ${ROOTS.themedark};
   .brand {
     display: flex;
     align-items: center;
@@ -12,6 +16,8 @@ export const Container = styled.div`
     justify-content: center;
     img {
       height: 2rem;
+      width:2rem;
+      border-radius:50%;
     }
     h3 {
       color: white;

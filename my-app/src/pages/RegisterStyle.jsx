@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {ROOTS} from '../utility/globalstyle';
 
 export const FormContainer=styled.div`
 height:100vh;
@@ -8,14 +9,16 @@ flex-direction:column;
 align-items:center;
 justify-content:center;
 gap:1rem;
-background-color: #131324;
+background-color:${ROOTS.theme};
   .brand {
     display: flex;
     align-items: center;
     gap: 1rem;
     justify-content: center;
     img {
-      height: 5rem;
+      height: 3rem;
+      width:3rem;
+      border-radius:50%;
     }
     h1 {
       color: white;
@@ -26,7 +29,8 @@ background-color: #131324;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    background-color: #00000076;
+    background-color:${ROOTS.themedark};
+    box-shadow: 10px 10px 25px -10px black;
     border-radius: 2rem;
     padding: 3rem 5rem;
   }
@@ -34,21 +38,21 @@ background-color: #131324;
   input {
     background-color: transparent;
     padding: 1rem;
-    border: 0.1rem solid grey;
+    border: 0.1rem solid ${ROOTS.themedark};
     border-radius: 0.5rem;
     color: white;
     width: 100%;
     font-size: 1rem;
     &:focus {
-      border: 0.1rem solid #997af0;
+      border: 0.1rem solid ${ROOTS.theme};
       outline: none;
     }
   }
 
   button {
     display:block;
-    background-color: #4e0eff;
-    color: white;
+    background-color:${ROOTS.theme};
+    color: ${ROOTS.themedark};
     padding: 1rem 2rem;
     border: none;
     font-weight: bold;
@@ -57,7 +61,9 @@ background-color: #131324;
     font-size: 1rem;
     text-transform: uppercase;
     &:hover {
-      background-color: #4e0eff;
+      background-color: ${ROOTS.themedark};
+      border:2px solid ${ROOTS.theme};
+      color:white;
     }
   }
 

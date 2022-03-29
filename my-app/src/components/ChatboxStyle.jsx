@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {ROOTS} from "../utility/globalstyle";
 
 export const ChatContainerbox = styled.div`
   display: grid;
@@ -13,6 +14,7 @@ export const ChatContainerbox = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    border-bottom:1px solid ${ROOTS.themedark};
     .user-details {
       display: flex;
       align-items: center;
@@ -61,13 +63,14 @@ export const ChatContainerbox = styled.div`
     .sended {
       justify-content: flex-end;
       .content {
-        background-color: #4f04ff21;
+        background-color: ${ROOTS.theme};
+        color:${ROOTS.themedark}
       }
     }
     .recieved {
       justify-content: flex-start;
       .content {
-        background-color: #9900ff20;
+        background-color: ${ROOTS.themedark};
       }
     }
   }

@@ -6,6 +6,7 @@ export const InputStyle=styled.div`
   grid-template-columns: 5% 95%;
   background-color: #080420;
   padding: 0 2rem;
+  border-bottom-right-radius:1.28rem;
   @media screen and (min-width: 720px) and (max-width: 1080px) {
     padding: 0 1rem;
     gap: 1rem;
@@ -65,6 +66,7 @@ export const InputStyle=styled.div`
       border: none;
       padding-left: 1rem;
       font-size: 1.2rem;
+      
       &::selection {
         background-color: #9a86f3;
       }

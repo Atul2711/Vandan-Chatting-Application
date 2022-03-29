@@ -1,5 +1,6 @@
 import React ,{useState,useEffect}from 'react';
 import { Container } from './ContactStyle';
+import Logo from '../assets/logo.jpg';
 
 export default function Contacts(props) {
 
@@ -27,7 +28,7 @@ export default function Contacts(props) {
         {currentUserImage && (
             <Container>
             <div className="brand">
-            <img src="" alt="logo" />
+            <img src={Logo} alt="logo" />
             <h3>vandan</h3>
           </div>
 

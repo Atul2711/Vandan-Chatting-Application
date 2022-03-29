@@ -1,11 +1,13 @@
 import styled from 'styled-components';
+import {ROOTS} from '../utility/globalstyle';
+
 export const Container = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
 gap: 3rem;
-background-color: #131324;
+background-color: ${ROOTS.theme};
 height: 100vh;
 width: 100vw;
 .loader {
@@ -13,7 +15,7 @@ width: 100vw;
 }
 .title-container {
   h1 {
-    color: white;
+    color: ${ROOTS.themedark};
   }
 }
 .avatars {
@@ -33,12 +35,12 @@ width: 100vw;
     }
   }
   .selected {
-    border: 0.4rem solid #4e0eff;
+    border: 0.4rem solid ${ROOTS.themedark};
   }
 }
 .submit-btn {
-  background-color: #4e0eff;
-  color: white;
+  background-color:${ROOTS.themedark};
+    color: ${ROOTS.theme};
   padding: 1rem 2rem;
   border: none;
   font-weight: bold;
@@ -47,7 +49,9 @@ width: 100vw;
   font-size: 1rem;
   text-transform: uppercase;
   &:hover {
-    background-color: #4e0eff;
+    background-color: ${ROOTS.theme};
+      border:2px solid ${ROOTS.themedark};
+      color:${ROOTS.themedark};
   }
 }
 `;

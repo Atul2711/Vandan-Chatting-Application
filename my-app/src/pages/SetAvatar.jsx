@@ -121,7 +121,7 @@ const refresh=async () => {
 <button onClick={setProfilePicture} className="submit-btn">
             Set as Profile Picture
           </button>
-          <button onClick={refresh} >Refresh</button>
+          <button className="submit-btn" onClick={refresh} >Refresh</button>
     <ToastContainer />
     </Container>)}
     </>

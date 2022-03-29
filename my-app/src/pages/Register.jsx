@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { registerRoute } from '../utility/APIRoutes';
+import Logo from '../assets/logo.jpg';
 
 
 export default function Register() {
@@ -84,7 +85,7 @@ const handleSubmit=async (e)=>{
     <FormContainer>
         <form onSubmit={(event)=>handleSubmit(event)}>
         <div className="brand">
-            <img src="" alt="logo" />
+            <img src={Logo} alt="logo" />
             <h1>vandan</h1>
           </div>
           <input
